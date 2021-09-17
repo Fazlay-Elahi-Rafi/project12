@@ -1,0 +1,196 @@
+.details {
+  margin: 0 0;
+  padding: 8rem 0;
+  &__image {
+    img {
+      border-radius: 5px;
+    }
+  }
+  &__name {
+    font-weight: 800;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: $C-1;
+    margin: -1rem 0 0 0;
+  }
+  &__list {
+    margin: 6px 0 1.8rem 0;
+    padding: 0 0;
+    li {
+      list-style: none;
+      display: inline;
+    }
+    &-star {
+      margin: 0 3px;
+      font-size: 1.2rem;
+      color: $star;
+    }
+    &-review {
+      color: $text;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+  &__prices {
+    margin: 0 0;
+    display: flex;
+    &-disc {
+      text-decoration: line-through;
+      font-weight: 700;
+      color: $btn;
+      font-size: 1.3rem;
+      margin: 0 6rem 0 0;
+
+      //   min-width: 768px;
+      @include md-screen {
+        font-size: 1.6rem;
+      }
+    }
+    &-price {
+      font-weight: 700;
+      color: $btn;
+      font-size: 1.3rem;
+
+      //   min-width: 768px;
+      @include md-screen {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  &__category {
+    color: $C-1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin: 0 0.8rem 0 0;
+    &-name {
+      color: $C-1;
+      font-weight: 500;
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+  }
+  &__info {
+    margin: 2rem 0 0 0;
+    &-qty {
+      &--title {
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: $C-1;
+      }
+      &--dec {
+        background: $white;
+        border: 1px solid $text;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: 14px 0 0 14px;
+      }
+      &--inc {
+        background: $white;
+        border: 1px solid $text;
+        cursor: pointer;
+        padding: 6px 8px;
+        border-radius: 0 14px 14px 0;
+      }
+      &--num {
+        margin: 0 0;
+        border: 1px solid $text;
+        border-left: transparent;
+        border-right: transparent;
+        padding: 6px 3rem;
+      }
+      &--icon {
+        transform: translate(0, -2px);
+      }
+    }
+  }
+  &__btn {
+    box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+    outline: 0 !important;
+    text-transform: capitalize;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    background: $btn !important;
+    color: $white !important;
+    margin: 2.5rem 0rem 0 0 !important;
+    padding: 8px 3rem !important;
+    &--icon {
+      font-size: 1.3rem;
+      transform: translate(-13px, -1px);
+    }
+  }
+  &__social {
+    margin: 0 0 1.5rem 0;
+    &-list {
+      margin: 0 0;
+      padding: 0 0;
+      &--text {
+        color: $C-1;
+        font-weight: 500;
+        font-size: 1.1rem;
+        text-transform: capitalize;
+        margin: 0 0.8rem 0 0;
+      }
+      li {
+        list-style: none;
+        display: inline;
+      }
+      &--icon {
+        margin: -4px 0.6rem 0 0.6rem;
+        font-size: 1.3rem;
+        color: $text;
+        cursor: pointer;
+      }
+    }
+  }
+  &__button {
+    box-shadow: none !important;
+    outline: none !important;
+    text-transform: capitalize;
+    font-size: 1.3rem !important;
+    color: $btn !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid $btn !important;
+    border-radius: 0 !important;
+  }
+  &__body {
+    background: $white;
+    border: 1px solid $border;
+    padding: 2rem 1rem;
+    overflow-y: scroll;
+    height: 22rem;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $btn;
+      border-radius: 10px;
+    }
+
+    // min-width: 568px;
+    @include iphn-screen {
+      height: 20rem;
+    }
+
+    // min-width: 992px;
+    @include lg-screen {
+      height: auto;
+      overflow: hidden;
+    }
+    &--para1 {
+      font-size: 1rem;
+      margin: 0 0 2rem 0;
+      color: $C-2;
+    }
+    &--para2 {
+      font-size: 1rem;
+      color: $C-2;
+    }
+  }
+}

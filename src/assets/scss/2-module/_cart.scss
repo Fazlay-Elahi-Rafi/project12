@@ -1,0 +1,156 @@
+.cart {
+  margin: 0 0;
+  padding: 4rem 0;
+  &__title {
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: $C-1;
+  }
+  &__heading {
+    border-bottom: 1px solid $border;
+    padding: 0 0 8px 0;
+    margin: 0 0 2.5rem 0;
+    &-type {
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 1.1rem;
+    }
+  }
+  &__name {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: $C-1;
+
+    // min-width: 768px;
+    @include md-screen {
+      font-size: 1.1rem;
+    }
+
+    // min-width: 992px;
+    @include lg-screen {
+      font-size: 1rem;
+    }
+
+    // min-width: 1200px;
+    @include xl-screen {
+      font-size: 1.2rem;
+    }
+  }
+  &__category {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: $C-1;
+
+    // min-width: 768px;
+    @include md-screen {
+      font-size: 0.9rem;
+    }
+
+    // min-width: 992px;
+    @include lg-screen {
+      font-size: 0.8rem;
+    }
+
+    // min-width: 1200px;
+    @include xl-screen {
+      font-size: 0.9rem;
+    }
+  }
+  &__price {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: $C-1;
+  }
+  &__count {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: $C-1;
+    &-inc {
+      cursor: pointer;
+    }
+    &-dec {
+      cursor: pointer;
+    }
+  }
+  &__hr {
+    width: 98% !important;
+    margin: 0 0 2.5rem 4px;
+    background: $border;
+    height: 1.2px !important;
+
+    // min-width: 576px;
+    @include sm-screen {
+      margin: 0 0 2.5rem 7px;
+    }
+
+    // min-width: 768px;
+    @include md-screen {
+      margin: 0 0 2.5rem 13px;
+    }
+  }
+  &__remove {
+    font-size: 1.2rem;
+    color: $btn;
+    margin: -3rem 0 0 0;
+    cursor: pointer;
+  }
+  &__image {
+    img {
+      border-radius: 4px;
+    }
+  }
+  &__summary {
+    background: $white;
+    border: 1px solid $border;
+    padding: 2rem 12px;
+    &-heading {
+      color: $C-1;
+      font-weight: 500;
+      text-transform: capitalize;
+      font-size: 1.3rem;
+    }
+    &-details {
+      padding: 1.5rem 0;
+      margin: 2rem 0;
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+      &--text {
+        font-size: 1rem;
+        color: $C-1;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      &--num {
+        font-size: 1rem;
+        color: $C-1;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+      &--btn {
+        box-shadow: none !important;
+        outline: 0 !important;
+        text-transform: capitalize;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        background: $btn !important;
+        color: $white !important;
+        padding: 8px 2rem !important;
+
+        // min-width: 992px;
+        @include lg-screen {
+          box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+        }
+
+        // min-width: 1200px;
+        @include xl-screen {
+          padding: 8px 2.2rem !important;
+        }
+      }
+    }
+  }
+}

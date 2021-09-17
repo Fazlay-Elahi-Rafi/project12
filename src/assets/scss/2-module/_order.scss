@@ -1,0 +1,112 @@
+.order {
+  margin: 12rem 0 6rem 0;
+  &__layer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 !important;
+    padding: 0.5rem !important;
+
+    //   min-width: 768px;
+    @include md-screen {
+      border-radius: 0 10px 10px 0 !important;
+    }
+  }
+  &__layer2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0 !important;
+    padding: 0.5rem !important;
+
+    //   min-width: 768px;
+    @include md-screen {
+      border-radius: 10px 0px 0px 10px !important;
+    }
+  }
+  &__img {
+    border-radius: 0;
+
+    //   min-width: 768px;
+    @include md-screen {
+      border-radius: 0 10px 10px 0;
+    }
+  }
+  &__img2 {
+    border-radius: 0;
+
+    //   min-width: 768px;
+    @include md-screen {
+      border-radius: 10px 0px 0px 10px;
+    }
+  }
+  &__card {
+    outline: none !important;
+    border: none !important;
+  }
+  &__body {
+    &-title {
+      font-size: 1.3rem;
+      color: $white;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+
+      //   min-width: 768px;
+      @include md-screen {
+        font-size: 1.2rem;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        font-size: 1.6rem;
+      }
+    }
+    &-text {
+      font-size: 0.95rem;
+      color: $bg-1;
+      font-weight: 500;
+      margin: 1.2rem 0;
+
+      //   min-width: 768px;
+      @include md-screen {
+        font-size: 0.9rem;
+        margin: 1rem 0;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 1rem;
+        margin: 1.2rem 0;
+      }
+    }
+    &-btn {
+      outline: none !important;
+      box-shadow: none !important;
+      text-transform: uppercase;
+      color: $white !important;
+      background: $btn !important;
+      border-radius: 30px !important;
+      font-size: 0.8rem !important;
+      padding: 6px 1.7rem !important;
+      letter-spacing: 1px;
+      font-weight: 500 !important;
+      transition: all 0.2s ease-in !important;
+      &:hover {
+        transition: all 0.2s ease-in !important;
+        background: transparent !important;
+        border: 1px solid $white !important;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 0.9rem !important;
+        padding: 7px 1.8rem !important;
+      }
+    }
+  }
+}

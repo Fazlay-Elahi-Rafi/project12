@@ -1,0 +1,62 @@
+#root {
+  background: $bg-1;
+}
+
+.adds {
+  margin: 0 0 0rem 0;
+  padding: 12rem 0;
+  &__card {
+    border: none !important;
+    &:hover &-img img {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+    }
+    &-layer {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      background: rgb(0, 0, 0, 0.3);
+      border-radius: 5px;
+    }
+    &-img {
+      overflow: hidden;
+      border-radius: 5px;
+      img {
+        transition: all 0.3s ease;
+        transform: scale(1);
+        border-radius: 5px;
+      }
+    }
+    &-num {
+      font-weight: 700;
+      font-size: 1.5rem;
+
+      //   min-width: 568px;
+      @include iphn-screen {
+        font-size: 2rem;
+      }
+    }
+    &-text {
+      font-weight: 500;
+      font-size: 1.3rem;
+      text-transform: capitalize;
+      display: block;
+      margin: 0 0 6px 0;
+
+      //   min-width: 568px;
+      @include iphn-screen {
+        font-size: 1.5rem;
+      }
+    }
+    &-name {
+      font-weight: 500;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+
+      //   min-width: 568px;
+      @include iphn-screen {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.location {
+  margin: 0 0 13rem 0;
+  position: relative;
+
+  // min-width: 500px;
+  @include ms-screen {
+    margin: 0 0 17rem 0;
+  }
+
+  // min-width: 568px;
+  @include iphn-screen {
+    margin: 0 0 13rem 0;
+  }
+
+  // min-width: 768px;
+  @include md-screen {
+    margin: 0 0 7rem 0;
+  }
+
+  // min-width: 992px;
+  @include lg-screen {
+    margin: 0 0 10rem 0;
+  }
+  &__body {
+    background: $white;
+    padding: 1.3rem 2rem !important;
+    margin: 0 0 10rem 0;
+    border-radius: 3px;
+    box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 30%) !important;
+
+    // min-width: 568px;
+    @include iphn-screen {
+      margin: 0 0 14rem 0;
+    }
+    &-inp {
+      box-shadow: none !important;
+      outline: none !important;
+      border: 1px solid $border !important;
+      font-weight: 500 !important;
+    }
+    &-btnO {
+      box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+      outline: 0 !important;
+      text-transform: capitalize;
+      font-size: 1rem !important;
+      font-weight: 500 !important;
+      background: $btn !important;
+      color: $white !important;
+      margin: 0 1rem 1.5rem 1rem !important;
+      padding: 6px 4rem 7px 4rem !important;
+      transition: all 0.2s ease-in !important;
+      &:hover {
+        transition: all 0.2s ease-in !important;
+        background: transparent !important;
+        color: $btn !important;
+        border: 1px solid $btn !important;
+        box-shadow: none !important;
+      }
+
+      //   min-width: 500px;
+      @include ms-screen {
+        margin: 0 1rem 0 0 !important;
+        padding: 6px 3rem 7px 3rem !important;
+      }
+
+      //   min-width: 768px;
+      @include md-screen {
+        padding: 6px 2rem 7px 2rem !important;
+        margin: 0 2rem 0 0 !important;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        padding: 6px 1.5rem 7px 1.5rem !important;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        padding: 6px 2rem 7px 2rem !important;
+      }
+    }
+    &-btnT {
+      box-shadow: none !important;
+      outline: 0 !important;
+      text-transform: capitalize;
+      font-size: 1rem !important;
+      font-weight: 500 !important;
+      background: transparent !important;
+      color: $btn !important;
+      border: 1px solid $btn !important;
+      padding: 6px 4rem 7px 4rem !important;
+      transition: all 0.2s ease-in !important;
+
+      &:hover {
+        transition: all 0.2s ease-in !important;
+        background: $btn !important;
+        color: $white !important;
+        box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+      }
+
+      //   min-width: 500px;
+      @include ms-screen {
+        padding: 6px 3rem 7px 3rem !important;
+      }
+
+      //   min-width: 768px;
+      @include md-screen {
+        padding: 6px 2rem 7px 2rem !important;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        padding: 6px 1.5rem 7px 1.5rem !important;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        padding: 6px 2rem 7px 2rem !important;
+      }
+    }
+  }
+  &__view {
+    box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+    outline: 0 !important;
+    text-transform: capitalize;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    background: $btn !important;
+    color: $white !important;
+    margin: 0 2rem 0 0 !important;
+    padding: 10px 2.2rem !important;
+  }
+}

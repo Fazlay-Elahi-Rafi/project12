@@ -1,0 +1,206 @@
+.head {
+  margin: 4rem 0 0 0;
+  padding: 0rem 0;
+
+  &__nav {
+    margin: 0 0 2rem 0;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border;
+
+    // min-width: 568px;
+    @include iphn-screen {
+      display: flex;
+    }
+    &-title {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: $C-1;
+      text-transform: uppercase;
+      margin: 0 0 2rem 0;
+      text-align: center;
+
+      // min-width: 568px;
+      @include iphn-screen {
+        margin: 0 0;
+      }
+    }
+    &-list {
+      margin: 0 0;
+      padding: 0 0;
+      display: flex;
+      justify-content: center;
+      li {
+        list-style: none;
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: $menu;
+        margin: -11px 0.7rem 0 0.7rem;
+        // margin: -11px 1.5rem 0 0rem;
+        cursor: pointer;
+        padding: 10px 0 10px 0;
+
+        // min-width: 568px;
+        @include iphn-screen {
+          margin: -10px 0rem 0 1.5rem;
+        }
+
+        // min-width: 768px;
+        @include md-screen {
+          margin: -11px 0rem 0 2.5rem;
+        }
+      }
+      .active {
+        cursor: pointer;
+        font-weight: 500;
+        color: $C-1;
+        font-size: 1rem;
+        border-bottom: 1px solid $btn;
+      }
+    }
+  }
+  &__card {
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 28%);
+    &:hover &-image {
+      background: rgba(0, 0, 0, 0.9);
+    }
+    &:hover &-image img {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+    &:hover &-icon {
+      z-index: 99;
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+    &-icon {
+      position: absolute;
+      transition: all 0.3s ease;
+      z-index: 0;
+      top: 22%;
+      left: 46%;
+      color: $white;
+      font-size: 1.5rem;
+      opacity: 0;
+    }
+    &-image {
+      overflow: hidden;
+      background: transparent;
+      border-radius: 8px 8px 0 0;
+      img {
+        transform: scale(1);
+        transition: all 0.3s ease;
+        opacity: 1;
+      }
+    }
+    &-title {
+      text-transform: capitalize;
+      font-size: 1rem;
+      font-weight: 800;
+      color: $C-1;
+      margin: 0 0 14px 0;
+
+      //   max-width: 575px;
+      @include xs-screen {
+        font-size: 1.2rem !important;
+      }
+
+      //   min-width: 768px;
+      @include md-screen {
+        font-size: 1.1rem;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 1.2rem;
+      }
+
+      //   min-width: 1366px;
+      @include xli-screen {
+        font-size: 1.1rem;
+      }
+
+      //   min-width: 1400px;
+      @include xlii-screen {
+        font-size: 1.2rem;
+      }
+    }
+    &-text {
+      color: $text;
+      font-size: 1rem;
+      margin: 0 0 1.2rem 0;
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 0.9rem;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        font-size: 1rem;
+      }
+    }
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      &--disc {
+        text-decoration: line-through;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $btn;
+      }
+      &--span {
+        font-size: 0.8rem;
+        margin: 0 0 0 2px;
+      }
+      &--num {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $btn;
+      }
+    }
+    &-btn {
+      margin: 1.5rem 0 0 0;
+      box-shadow: none !important;
+      outline: 0 !important;
+      border-color: transparent !important;
+      background: $btn !important;
+      color: $white !important;
+      text-transform: capitalize;
+      font-size: 1rem !important;
+      font-weight: 500 !important;
+      border-radius: 5px !important;
+      &--icon {
+        font-size: 1.4rem;
+        transform: translate(-13px, -2px);
+      }
+    }
+  }
+  &__alert {
+    background: $white;
+    color: $alert;
+    border: 1px solid $border;
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    width: 13rem !important;
+    height: auto;
+    padding: 10px 0 10px 1.2rem !important;
+    border-radius: 3px;
+    text-transform: uppercase;
+    z-index: 9999;
+    box-shadow: 0px 3px 6px 1px rgb(0 0 0 / 10%);
+    transition: all 0.4s ease;
+  }
+  &__hide {
+    position: fixed;
+    top: 3rem;
+    right: -20rem;
+    width: 13rem !important;
+    transition: all 0.3s ease;
+  }
+}

@@ -1,0 +1,79 @@
+.body {
+  overflow: hidden;
+  background: $body;
+  padding: 15rem 0 40rem 0;
+  margin: -7rem 0 -39rem 0;
+
+  //   min-width: 768px;
+  @include md-screen {
+    padding: 15rem 0 29rem 0;
+    margin: -7rem 0 -29rem 0;
+  }
+
+  //   min-width: 992px;
+  @include lg-screen {
+    margin: -7rem 0 -33rem 0;
+  }
+
+  //   min-width: 1200px;
+  @include xl-screen {
+    padding: 15rem 0 24rem 0;
+    margin: -7rem 0 -29rem 0;
+  }
+
+  //   min-width: 1400px;
+  @include xl-screen {
+    margin: -7rem 0 -32rem 0;
+  }
+
+  &__card {
+    margin: 0rem 0 0 0rem;
+    &-title {
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: $C-1;
+
+      //   min-width: 500px;
+      @include ms-screen {
+        font-size: 2rem;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .slick-slider {
+    .slick-arrow {
+      display: none !important;
+    }
+    .slick-dots {
+      z-index: 999;
+      li {
+        margin: 0 1rem;
+        button {
+          &::before {
+            width: 35px;
+            height: 5px;
+            background: $btn;
+            border-radius: 20px;
+            content: "";
+            top: 38rem;
+
+            // min-width: 768px;
+            @include md-screen {
+              top: 26rem;
+            }
+
+            // min-width: 1200px;
+            @include xl-screen {
+              top: 21rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
