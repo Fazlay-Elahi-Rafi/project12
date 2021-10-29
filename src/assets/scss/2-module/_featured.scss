@@ -1,0 +1,97 @@
+.featured {
+  margin: -0.5rem 0 0 0;
+  &__title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: $C-1;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+  }
+  &__span {
+    font-size: 1rem;
+    color: $C-2;
+    text-transform: capitalize;
+  }
+  &__items {
+    border: 0px !important;
+    border-radius: 4px !important;
+    &-comp {
+      font-size: 0.8rem;
+      color: $C-2;
+      text-transform: uppercase;
+    }
+    &-name {
+      font-size: 0.95rem;
+      text-transform: capitalize;
+      color: $loc;
+      font-family: $font;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+    &-price {
+      display: flex;
+      justify-content: space-between;
+      &--disc {
+        text-decoration: line-through;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $btn;
+      }
+      &--span {
+        font-size: 0.8rem;
+        margin: 0 0 0 2px;
+      }
+      &--num {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $btn;
+      }
+    }
+    &-image {
+      overflow: hidden;
+      background: transparent;
+
+      // min-width: 768px;
+      @include md-screen {
+        overflow: visible;
+      }
+      img {
+        transform: scale(1);
+        transition: all 0.3s ease;
+        opacity: 1;
+      }
+    }
+    &-icon {
+      position: absolute;
+      transition: all 0.3s ease;
+      z-index: 0;
+      top: 25%;
+      left: 45%;
+      color: $C-1;
+      font-size: 1.5rem;
+      opacity: 0;
+
+      // min-width: 568px;
+      @include iphn-screen {
+        top: 25%;
+        left: 45%;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        top: 35%;
+        left: 15%;
+      }
+    }
+    &:hover &-image img {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
+    &:hover &-icon {
+      z-index: 99;
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+  }
+}

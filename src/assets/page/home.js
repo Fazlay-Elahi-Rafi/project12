@@ -6,6 +6,9 @@ import Adds from "../components/02-Adds/adds";
 import Head from "../components/03-Products/head";
 import ProductAdd from "../components/04-Adds2/productAdd";
 import Order from "../components/06-Order/order";
+import Featured from "../components/08-Featured/featured";
+import Adds3 from "../components/07-Adds3/adds";
+import Chef from "../components/09-Chef/chef";
 
 export default function Home() {
   return (
@@ -16,6 +19,9 @@ export default function Home() {
       <Head />
       <ProductAdd />
       <Order />
+      <Adds3 />
+      <Featured />
+      <Chef />
     </>
   );
 }

@@ -1,11 +1,9 @@
-import Fish from "./api/api";
-import Chicken from "./api/api2";
-import Pizza from "./api/api3";
+import Items from "./api/api1";
+import api from "./api/data";
 
 const initState = {
-  fish: Fish,
-  chicken: Chicken,
-  pizza: Pizza,
+  data: api,
+  item: Items,
 
   product: {},
 };
@@ -14,23 +12,16 @@ const ProductsReducer = (state = initState, action) => {
   if (action.type === "PRODUCT") {
     return {
       ...state,
-      product: state.fish.find((product) => product.id === parseInt(action.id)),
+      product: state.data.find((product) => product.id === parseInt(action.id)),
     };
-  } else if (action.type === "PRODUCT_TWO") {
+  }
+  else if (action.type === "ADD_ITEMS") {
     return {
       ...state,
-      product: state.chicken.find(
-        (product) => product.id === parseInt(action.id)
-      ),
+      product: state.item.find((product) => product.id === parseInt(action.id)),
     };
-  } else if (action.type === "PRODUCT_THREE") {
-    return {
-      ...state,
-      product: state.pizza.find(
-        (product) => product.id === parseInt(action.id)
-      ),
-    };
-  } else {
+  }
+  else {
     return state;
   }
 };

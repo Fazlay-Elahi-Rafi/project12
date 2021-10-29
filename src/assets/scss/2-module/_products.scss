@@ -23,7 +23,8 @@
 
       // min-width: 568px;
       @include iphn-screen {
-        margin: 0 0;
+        // margin: 0 0;
+        margin: -11px 0 0 0;
       }
     }
     &-list {
@@ -37,7 +38,6 @@
         text-transform: capitalize;
         color: $menu;
         margin: -11px 0.7rem 0 0.7rem;
-        // margin: -11px 1.5rem 0 0rem;
         cursor: pointer;
         padding: 10px 0 10px 0;
 
@@ -57,6 +57,7 @@
         color: $C-1;
         font-size: 1rem;
         border-bottom: 1px solid $btn;
+        padding: 0 0 11px 0;
       }
     }
   }
@@ -119,8 +120,8 @@
         font-size: 1.2rem;
       }
 
-      //   min-width: 1366px;
-      @include xli-screen {
+      //   min-width: 1200px;
+      @include xl-screen {
         font-size: 1.1rem;
       }
 

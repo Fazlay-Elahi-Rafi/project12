@@ -1,0 +1,94 @@
+.chef {
+  margin: 10rem 0 0 0;
+  &__title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: $C-1;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem 0;
+  }
+  &__card {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    &:hover &-body {
+      &--hr {
+        color: $btn !important;
+        transform: scale(1);
+        transition: all 0.5s ease;
+      }
+    }
+    &:hover &-social {
+      right: 0;
+      transition: all 0.5s ease;
+    }
+    &-img {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    &-social {
+      position: absolute;
+      background: $white;
+      right: -6rem;
+      transition: all 0.5s ease;
+      &--list {
+        margin: 0 0;
+        padding: 0 12px;
+        li {
+          list-style: none;
+          margin: 0.6rem 0;
+          font-size: 1.2rem;
+          color: $C-1;
+          cursor: pointer;
+        }
+      }
+    }
+    &-body {
+      background: $white;
+      width: 17rem;
+      padding: 1.2rem 0;
+      margin: auto;
+      position: relative;
+      transform: translate(0rem, -2rem);
+      border-bottom: 2px solid $text;
+
+      //   min-width: 768px;
+      @include md-screen {
+        width: 12rem;
+      }
+
+      //   min-width: 992px;
+      @include lg-screen {
+        width: 17rem;
+      }
+      &--hr {
+        color: transparent !important;
+        transition: all 0.5s ease;
+        transform: scale(0);
+        margin: 0 0;
+        height: 2px !important;
+        opacity: 1;
+        position: relative;
+        top: 1.3rem;
+        left: 0;
+      }
+      &--title {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.2rem;
+        color: $C-1;
+        margin: 0 0;
+      }
+      &--text {
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 1rem;
+        color: $text;
+        margin: 10px 0 0 0;
+      }
+    }
+  }
+}

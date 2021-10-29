@@ -1,0 +1,72 @@
+.adds3 {
+  margin: 12rem 0;
+  &__card {
+    border-radius: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    &-layer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 0rem 0 0;
+      background: rgba(0, 0, 0, 0.3);
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        margin: 0 5rem 0 0;
+        justify-content: end;
+        background: transparent;
+      }
+    }
+    &-img {
+      overflow: hidden;
+      position: relative;
+      img {
+        margin: 0 0 0 -33rem;
+
+        // min-width: 568px;
+        @include iphn-screen {
+          margin: 0 0;
+        }
+      }
+    }
+    &-title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $white;
+
+      //   min-width: 568px;
+      @include iphn-screen {
+        font-size: 2rem;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        color: $C-1;
+      }
+    }
+    &-text {
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      color: $white;
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        color: $C-1;
+      }
+    }
+
+    &-btn {
+      box-shadow: none !important;
+      outline: 0 !important;
+      border-radius: 0 !important;
+      color: $white !important;
+      background: $btn !important;
+      font-weight: 500 !important;
+      font-size: 0.9rem !important;
+      text-transform: uppercase;
+    }
+  }
+}

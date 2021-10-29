@@ -8,6 +8,7 @@ import About from "./assets/page/about";
 import Cart from "./assets/page/cart";
 import Navbar from "./assets/components/01-Header/navbar";
 import Details from "./assets/components/03-Products/details";
+import ItemDetails from "./assets/components/08-Featured/itemDetails";
 
 // Redux
 import { Provider } from "react-redux";
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/about" component={About} />
             <Route path="/cart" component={Cart} />
             <Route path="/details/:id" exact component={Details} />
+            <Route path="/itemdetails/:id" exact component={ItemDetails} />
           </Switch>
         </Provider>
       </Router>
