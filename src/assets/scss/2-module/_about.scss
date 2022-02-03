@@ -1,0 +1,56 @@
+.about {
+  background: $white;
+  padding: 4rem 0;
+  
+  &__title {
+    font-size: 1.8rem;
+    color: $C-1;
+    text-transform: capitalize;
+    font-weight: 700 !important;
+    font-family: $font;
+
+    // min-width: 568px;
+    @include iphn-screen {
+      font-size: 2rem;
+    }
+  }
+  &__para {
+    font-size: 1rem;
+    font-family: $font;
+    color: $C-1;
+    line-height: 2;
+    margin: 0 0 1rem 0;
+  }
+  &__text {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+
+    // min-width: 568px;
+    @include iphn-screen {
+      font-size: 1.4rem;
+    }
+    &-list {
+      margin: 0 0;
+      padding: 0 0 0 1.5rem;
+      &--style {
+        list-style-type: square;
+        font-size: 1.5rem;
+        color: $C-1;
+      }
+    }
+  }
+  &__service {
+    &-ul {
+      margin: 0 0;
+      padding: 0 0 0 2rem;
+      li {
+        color: $C-1;
+        font-size: 1.05rem;
+        text-transform: capitalize;
+        font-family: $font;
+        font-weight: 500;
+        margin: 1rem 0;
+      }
+    }
+  }
+}

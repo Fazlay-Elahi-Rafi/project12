@@ -1,5 +1,5 @@
 .chef {
-  margin: 10rem 0 0 0;
+  margin: 10rem 0;
   &__title {
     font-weight: 500;
     font-size: 1.5rem;
@@ -48,21 +48,31 @@
     }
     &-body {
       background: $white;
-      width: 17rem;
+      width: 18rem;
       padding: 1.2rem 0;
       margin: auto;
       position: relative;
       transform: translate(0rem, -2rem);
       border-bottom: 2px solid $text;
 
+      //   min-width: 576px;
+      @include sm-screen {
+        width: 15rem;
+      }
+
       //   min-width: 768px;
       @include md-screen {
-        width: 12rem;
+        width: 16rem;
       }
 
       //   min-width: 992px;
       @include lg-screen {
-        width: 17rem;
+        width: 13rem;
+      }
+
+      //   min-width: 1200px;
+      @include xl-screen {
+        width: 15rem;
       }
       &--hr {
         color: transparent !important;

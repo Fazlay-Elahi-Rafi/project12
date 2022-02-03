@@ -105,6 +105,45 @@
       }
     }
   }
+  &__card {
+    &-price {
+      font-family: $font;
+      font-weight: 600;
+      color: $btn;
+
+      &--num {
+        color: $btn !important;
+        font-size: 1.8rem;
+      }
+      &--del {
+        color: $num !important;
+        font-size: 1.8rem;
+      }
+
+      &--sale {
+        font-size: 1.3rem;
+      }
+    }
+    &-time {
+      background: #eeeeee59;
+      display: flex;
+      justify-content: start;
+      padding: 1rem 1rem;
+      border: 1px solid $text;
+      border-radius: 3px;
+      &--text {
+        color: $black;
+        font-size: 1rem;
+        font-family: $font;
+        font-weight: 500;
+      }
+      &--check {
+        color: $text;
+        font-size: 1.5rem;
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
   &__btn {
     box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
     outline: 0 !important;

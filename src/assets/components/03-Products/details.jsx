@@ -6,7 +6,12 @@ import currencyFormatter from "currency-formatter";
 import { BsDash, BsPlus } from "react-icons/bs";
 import { AiTwotoneStar, AiOutlineStar } from "react-icons/ai";
 import { TiShoppingCart } from "react-icons/ti";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 const Details = () => {
   const history = useHistory();
@@ -25,20 +30,25 @@ const Details = () => {
       dispatch({ type: "PRODUCT", id });
     }
     if (two) {
-      dispatch({ type: "PRODUCT_TWO", id });
+      dispatch({ type: "PRODUCT", id });
+      // dispatch({ type: "PRODUCT_TWO", id });
     }
     if (three) {
-      dispatch({ type: "PRODUCT_THREE", id });
+      dispatch({ type: "PRODUCT", id });
+      // dispatch({ type: "PRODUCT_THREE", id });
     }
     if (four) {
-      dispatch({ type: "PRODUCT_THREE", id });
+      dispatch({ type: "PRODUCT", id });
+      // dispatch({ type: "PRODUCT_THREE", id });
     }
     if (five) {
-      dispatch({ type: "PRODUCT_THREE", id });
+      dispatch({ type: "PRODUCT", id });
+      // dispatch({ type: "PRODUCT_THREE", id });
     }
 
-    //   if (product.image === undefined) {
-    //     history.push("/");
+    if (product.image === undefined) {
+      history.push("/");
+    }
   }, [id, product]);
 
   const decQuantity = () => {
@@ -62,8 +72,8 @@ const Details = () => {
         {msg}
       </div>
       <div className="container">
-        <div className="row">
-          <div className="col-md-8 col-lg-7 col-xl-6 m-auto mb-5 mb-lg-0">
+        <div className="row justify-content-center">
+          <div className="col-md-8 col-lg-7 col-xl-6 mb-5 mb-lg-0">
             <div className="details__image">
               <img className="img-fluid" src={`${product.image}`} alt="" />
             </div>
@@ -120,6 +130,24 @@ const Details = () => {
               </div>
             </div>
             <div className="details__info">
+              <div className="col-10 col-sm-8 col-xl-6 my-4">
+                <div className="details__card-time">
+                  <div className="">
+                    <FaCheckCircle className="details__card-time--check" />
+                  </div>
+                  <div className="">
+                    <h5 className="details__card-time--text">
+                      Estimated delivery time
+                    </h5>
+                    <span className="details__card-time--text">1 - 3 days</span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-11">
+                <h4 className="details__card-price details__card-price--sale mb-3">
+                  Hurry UP! Sale ends in 3 days 09h 55m 30s
+                </h4>
+              </div>
               <div className="details__info-qty">
                 <div className="" style={{ margin: "0 0 1rem 0" }}>
                   <span className="details__info-qty--title">quantity:</span>

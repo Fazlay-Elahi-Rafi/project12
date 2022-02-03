@@ -4,18 +4,17 @@ import { Link } from "react-router-dom";
 import { TiTimesOutline } from "react-icons/ti";
 import { FaBars } from "react-icons/fa";
 
+import { navData } from "./navData";
+
 import Search from "./search";
 
 const FullPage = () => {
-  const [show, upShow] = useState(false);
-
-  const closeFun = () => {
-    upShow(false);
+  const [sidebar, setSidebar] = useState(false);
+  
+  const showSidebar = () => {
+    setSidebar(!sidebar);
   };
 
-  const showFun = () => {
-    upShow(true);
-  };
   return (
     <section className="d-inline-block d-lg-none">
       <div className="container">
@@ -24,7 +23,7 @@ const FullPage = () => {
             <div className="col-3 col-sm-2 d-flex justify-content-center">
               <div className="fullpage__bars">
                 <FaBars
-                  onClick={showFun}
+                  onClick={showSidebar}
                   className="fullpage__bars-icon"
                   style={{ cursor: "pointer" }}
                 />
@@ -33,42 +32,32 @@ const FullPage = () => {
           </div>
         </div>
       </div>
-      <div className={`${show ? "fullpage__navclose fullpage" : "fullpage"}`}>
+      <div
+        className={`${sidebar ? "fullpage__navclose fullpage" : "fullpage"}`}
+      >
         <div className="container">
           <div className="col-12 my-3 text-light">
             <TiTimesOutline
-              onClick={closeFun}
-              className={`${show ? "fullpage__close" : "navclose"}`}
+              onClick={showSidebar}
+              className="fullpage__close"
               style={{ cursor: "pointer" }}
             />
           </div>
 
           <ul className="fullpage__list">
-            <li className="fullpage__list-li my-4">
-              <Link to="/" className="fullpage__list-link active">
-                home
-              </Link>
-            </li>
-            <li className="fullpage__list-li mb-4">
-              <Link to="/about" className="fullpage__list-link">
-                about
-              </Link>
-            </li>
-            <li className="fullpage__list-li mb-4">
-              <Link to="/cart" className="fullpage__list-link">
-                cart
-              </Link>
-            </li>
-            <li className="fullpage__list-li mb-4">
-              <Link to="/product" className="fullpage__list-link">
-                products
-              </Link>
-            </li>
-            <li className="fullpage__list-li mb-4">
-              <Link to="/" className="fullpage__list-link">
-                contact us
-              </Link>
-            </li>
+            {navData.map((item) => {
+              return (
+                <li
+                  key={item.id}
+                  className="fullpage__list-li my-4"
+                  onClick={showSidebar}
+                >
+                  <Link to={item.path} className="fullpage__list-link">
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <div className="col-10 col-md-7 d-flex justify-content-between align-items-center mb-4">
             <button className="btn nav__sign d-inline d-lg-none">

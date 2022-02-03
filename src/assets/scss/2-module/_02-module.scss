@@ -1,49 +1,61 @@
-// 00. Loader
+// 00
 @import "./loader";
+@import "./fixed";
 
-// 01. Navbar
+//  Navbar
 @import "./navbar";
 
-// 02. Search
+// Search
 @import "./search";
 
-// 03. FullPage__Nav
+// FullPage__Nav
 @import "./fullPage";
 
-// 04. Location
+// Location
 @import "./location";
 
-// 05. Body
+// Body
 @import "./body";
 
-// 06. Adds
+// Adds
 @import "./adds";
 
-// 07. Menu
+// Menu
 @import "./menu";
 
-// 08. Products
-@import "./products";
+// Products
+@import "./head";
 
-// 09. Products_Details
+// Products_Details
 @import "./productDetails";
 
-// 10. Products_Cart
+// Products_Cart
 @import "./cart";
 
-// 11. ProductAdd
+// ProductAdd
 @import "./productAdd";
 
-// 12. -------
+// Review
+@import "./review";
 
-// 13. Order
-@import "./order";
-
-// 14. Adds-3
+//  Adds-3
 @import "./adds3";
 
-// 15. Featured
+//  Featured
 @import "./featured";
 
-// 16. Chef
+// Chef
 @import "./chef";
+
+// Popular
+@import "./popular";
+
+// About
+@import "./about";
+
+// Contact
+@import "./contact";
+
+
+// Footer
+@import "./footer";
