@@ -13,8 +13,15 @@
   }
 }
 //Extra Medium-Small Screen
+@mixin xsss-screen {
+  @media screen and (min-width: 400px) {
+    @content;
+  }
+}
+//Extra Medium-Small Screen
 @mixin xss-screen {
-  @media screen and (max-width: 400px) {
+  // @media screen and (max-width: 400px) {
+  @media screen and (max-width: 520px) {
     @content;
   }
 }

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 
-
 export default function Head() {
   const { menuOne, menuTwo, menuThree, menuFour, menuFive } = useFetch();
   const [quantity, setQuantity] = useState(1);

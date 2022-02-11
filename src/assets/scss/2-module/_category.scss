@@ -1,0 +1,218 @@
+.category {
+  padding: 9rem 0 4rem 0;
+  background: $bg-1;
+
+  &__link {
+    background: #ebebeb87 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+    text-transform: capitalize;
+    border-radius: 0 !important;
+    &-text {
+      font-size: 1.1rem;
+      color: $C-1;
+    }
+    &-icon {
+      font-size: 1.2rem;
+      color: $C-1;
+      cursor: pointer;
+    }
+  }
+  &__nav {
+    &-list {
+      margin: 0 0;
+      padding: 0 0;
+      border-bottom: 1px solid $border;
+      li {
+        list-style: none;
+        padding: 14px 0 14px 15px;
+        border-left: 2px solid transparent;
+        color: $C-1 !important;
+        @include fix;
+        text-transform: capitalize;
+      }
+      &-i {
+        color: $C-1;
+        font-size: 1.3rem;
+      }
+    }
+    &-title {
+      font-family: $font;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      padding: 16px 0 10px 10px !important;
+      text-transform: capitalize;
+    }
+    &-sm {
+      color: #9293ac !important;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+  }
+  &__price {
+    &-inp {
+      border: 1px solid #d3ddf6;
+      outline: 0;
+      width: 100%;
+      color: $black;
+      text-align: center;
+    }
+    &-dif {
+      color: $C-1;
+      font-size: 1rem;
+    }
+    &-range {
+      width: 90%;
+    }
+  }
+
+  &__card {
+    &:hover &-icon {
+      z-index: 99;
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+    &:hover &-iconlg {
+      z-index: 99;
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+    &:hover &-image img {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+      opacity: 0.6;
+    }
+    &-image {
+      overflow: hidden;
+
+      // min-width: 992px;
+      @include lg-screen {
+        background: #d0dbdd;
+      }
+
+      &--link {
+        background: #d0dbdd;
+        overflow: hidden;
+      }
+    }
+    &-iconlg {
+      background: $btn;
+      padding: 0.4rem;
+      border-radius: 50px;
+      position: absolute;
+      transition: all 0.3s ease;
+      z-index: 0;
+      top: 15%;
+      left: 43%;
+      color: $white;
+      font-size: 2.2rem;
+      opacity: 0;
+
+      // min-width: 400px;
+      @include xsss-screen {
+        top: 20%;
+        left: 46%;
+      }
+
+      // min-width: 500px;
+      @include ms-screen {
+        top: 22%;
+        left: 48%;
+      }
+
+      // min-width: 576px;
+      @include sm-screen {
+        top: 25%;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        top: 23%;
+        left: 46%;
+      }
+
+      // min-width: 992px;
+      @include lg-screen {
+        top: 45%;
+        left: 18%;
+      }
+
+      &--one {
+        margin: 0 0 0 -1.8rem;
+      }
+      &--two {
+        margin: 0 0 0 1.8rem;
+      }
+    }
+    &-icon {
+      background: $btn;
+      padding: 0.4rem;
+      border-radius: 50px;
+      position: absolute;
+      transition: all 0.3s ease;
+      z-index: 0;
+      top: 23%;
+      left: 43%;
+      color: $white;
+      font-size: 2.2rem;
+      opacity: 0;
+
+      // min-width: 400px;
+      @include xsss-screen {
+        top: 26%;
+        left: 46%;
+      }
+
+      // min-width: 500px;
+      @include ms-screen {
+        top: 30%;
+        left: 44%;
+      }
+
+      // min-width: 576px;
+      @include sm-screen {
+        top: 22%;
+        left: 42%;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        top: 16%;
+        left: 40%;
+      }
+
+      &--one {
+        margin: 0 0 0 -1.8rem;
+      }
+      &--two {
+        margin: 0 0 0 1.8rem;
+      }
+    }
+  }
+  &__pagination {
+    margin: 5rem 0 0 0;
+    &-link {
+      box-shadow: none !important;
+      outline: 0 !important;
+      border: 1px solid #d3ddf6 !important;
+      border-radius: 3px !important;
+      font-family: $font;
+      font-weight: 600 !important;
+      color: $C-1 !important;
+      font-size: 1rem !important;
+      background: $white !important;
+      margin: 0 9px;
+      padding: 7px 0.9rem;
+      &:hover {
+        background: $btn !important;
+        color: $white !important;
+        border: 1px solid $btn !important;
+      }
+    }
+    &-active {
+      background: $btn !important;
+      color: $white !important;
+      border: 1px solid $btn !important;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.extra {
+  background: $bg-1;
+  padding: 0 0 4rem 0;
+  &__card {
+    border-radius: 3px !important;
+    box-shadow: 0px 6px 12px 0 rgb(223 228 250 / 55%) !important;
+    border: none !important;
+    &-title {
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    &-image {
+      overflow: hidden;
+      background: transparent;
+
+      // min-width: 768px;
+      // @include md-screen {
+      //   overflow: visible;
+      // }
+      img {
+        background: #d0dbdd;
+        transform: scale(1);
+        transition: all 0.3s ease;
+        opacity: 1;
+      }
+      &--link {
+        overflow: hidden;
+      }
+    }
+    &-link {
+      border: 50px;
+    }
+
+    &-icon {
+      background: $btn;
+      padding: 0.4rem;
+      border-radius: 50px;
+      position: absolute;
+      transition: all 0.3s ease;
+      z-index: 0;
+      top: 23%;
+      left: 43%;
+      color: $white;
+      font-size: 1.5rem;
+      opacity: 0;
+
+      // min-width: 400px;
+      @include xsss-screen {
+        top: 26%;
+        left: 46%;
+      }
+
+      // min-width: 500px;
+      @include ms-screen {
+        top: 30%;
+        left: 44%;
+      }
+
+      // min-width: 576px;
+      @include sm-screen {
+        top: 22%;
+        left: 42%;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        top: 23%;
+        left: 43%;
+      }
+
+      // min-width: 992px;
+      @include lg-screen {
+        top: 16%;
+        left: 40%;
+      }
+
+      &--one {
+        margin: 0 0 0 -1.8rem;
+      }
+      &--two {
+        margin: 0 0 0 1.8rem;
+      }
+    }
+    &:hover &-image img {
+      transform: scale(1.1);
+      transition: all 0.3s ease;
+      opacity: 0.6;
+    }
+    &:hover &-icon {
+      z-index: 99;
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+  }
+  &__price {
+    font-size: 1.2rem !important;
+  }
+}

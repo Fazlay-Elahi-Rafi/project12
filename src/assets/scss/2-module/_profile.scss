@@ -1,0 +1,391 @@
+.profile {
+  background: $bg-1;
+  padding: 5rem 0 4rem 0;
+
+  // min-width: 576px;
+  @include sm-screen {
+    padding: 10rem 0 4rem 0;
+  }
+
+  // min-width: 992px;
+  @include lg-screen {
+    padding: 9rem 0 4rem 0;
+  }
+
+  // min-width: 1200px;
+  @include xl-screen {
+    padding: 10rem 0 4rem 0;
+  }
+  &__nav {
+    background: $white;
+    &-list {
+      margin: 0 0;
+      padding: 0 0;
+      li {
+        list-style: none;
+        cursor: pointer;
+        padding: 14px 0 14px 15px;
+        border-left: 2px solid transparent;
+        color: $C-1 !important;
+        @include fix;
+        &:hover {
+          border-left: 2px solid $btn;
+          background: #f244051a;
+        }
+      }
+      &--active {
+        border-left: 2px solid $btn !important;
+        background: #f244051a;
+      }
+    }
+  }
+  &__card {
+    padding: 2rem 0 2.5rem 0;
+    border-radius: 3px !important;
+    box-shadow: 2px 1px 6px 1px rgb(196 201 206 / 38%) !important;
+
+    // min-width: 992px;
+    @include lg-screen {
+      padding: 2rem 0 3.4rem 0;
+    }
+
+    // min-width: 1200px;
+    @include xl-screen {
+      padding: 2rem 0 1rem 0;
+    }
+    &-head {
+      margin: 0 0;
+    }
+    &-img {
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      img {
+        border-radius: 15rem;
+        width: 45%;
+
+        // min-width: 576px;
+        @include sm-screen {
+          width: 180px;
+          height: 180px;
+        }
+        // min-width: 768px;
+        @include md-screen {
+          width: 150px;
+          height: 150px;
+        }
+
+        // min-width: 992px;
+        @include lg-screen {
+          width: 63%;
+          width: 180px;
+          height: 180px;
+        }
+
+        // min-width: 1200px;
+        @include xl-screen {
+          width: 55%;
+          height: auto;
+        }
+      }
+    }
+    &-icon {
+      position: absolute;
+      top: 73%;
+      left: 60%;
+      box-shadow: none !important;
+      outline: 0 !important;
+      margin: 0 0 !important;
+      padding: 0 0 !important;
+
+      // min-width: 400px;
+      @include xsss-screen {
+        left: 63%;
+      }
+
+      // min-width: 500px;
+      @include ms-screen {
+        left: 64%;
+      }
+
+      // min-width: 576px;
+      @include sm-screen {
+        left: 60%;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        left: 64%;
+      }
+
+      // min-width: 992px;
+      @include lg-screen {
+        left: 67%;
+      }
+      &--i {
+        border: 2px solid $be;
+        background: $white;
+        border-radius: 33px;
+        padding: 6px 6px;
+      }
+    }
+    &-name {
+      font-family: $font;
+      text-align: center;
+      color: $C-1;
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+    }
+    &-email {
+      font-family: $font;
+      text-align: center;
+      color: $text !important;
+      font-weight: 500;
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+    &-dis {
+      color: $C-1;
+      font-size: 1.3rem;
+      text-transform: capitalize;
+      font-family: $font;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+    }
+    &-button {
+      &--danger {
+        color: $white !important;
+        background: $btn !important;
+        box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+        &:hover {
+          color: $btn !important;
+          background: $white !important;
+        }
+      }
+      &--p {
+        margin: 0 1rem 2rem 0;
+        padding: 5px 1.5rem !important;
+
+        // min-width: 400px;
+        @include xsss-screen {
+          padding: 5px 2rem !important;
+          margin: 0 1rem 0 0;
+        }
+
+        // min-width: 500px;
+        @include ms-screen {
+          padding: 5px 2rem !important;
+          margin: 0 1rem 0 0;
+        }
+
+        // min-width: 768px;
+        @include md-screen {
+          padding: 5px 1.5rem !important;
+        }
+
+        // min-width: 992px;
+        @include lg-screen {
+          padding: 5px 1.5rem !important;
+        }
+      }
+      &--light {
+        box-shadow: none !important;
+        color: $btn !important;
+        background: $white !important;
+        padding: 5px 1.2rem !important;
+        margin: 0 0rem;
+
+        // min-width: 400px;
+        @include xsss-screen {
+          padding: 5px 1.8rem !important;
+        }
+
+        // min-width: 768px;
+        @include md-screen {
+          padding: 5px 1.2rem !important;
+        }
+
+        &:hover {
+          color: $white !important;
+          background: $btn !important;
+          box-shadow: 0px 5px 7px 0px rgb(248 153 109 / 59%) !important;
+        }
+      }
+    }
+  }
+  &__info {
+    background: $white;
+    border-radius: 3px !important;
+    // padding: 1rem 2rem 1rem 1rem;
+    padding: 1rem 1rem;
+    box-shadow: 2px 1px 6px 1px rgb(196 201 206 / 38%) !important;
+    &-m {
+      margin: 0 1rem 0 0;
+    }
+    &-mr {
+      margin: 1rem 0 0 0;
+
+      // min-width: 768px;
+      @include md-screen {
+        margin: 0 0rem 0 1rem;
+      }
+    }
+    &-icon {
+      color: $C-1 !important;
+      font-size: 1.2rem !important;
+      margin: 0 0.4rem 0 0;
+    }
+    &-type {
+      background: $white;
+      box-shadow: 2px 7px 7px 0px rgb(51 51 51 / 3%) !important;
+      padding: 1rem 0;
+      margin: 1.5rem 0 0 0;
+      border-radius: 3px;
+      &--text {
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+      }
+      &--iconBg {
+        background: $white;
+        box-shadow: 2px 7px 8px 0px rgb(51 51 51 / 9%) !important;
+        padding: 10px 10px 5px 10px !important;
+        border-radius: 50px;
+        margin: 0 1rem;
+      }
+      &--icon {
+        color: $btn;
+        font-size: 1.4rem;
+      }
+      &--span {
+        // min-width: 1200px;
+        @include xl-screen {
+          font-size: 0.9rem;
+        }
+
+        // min-width: 1400px;
+        @include xlii-screen {
+          font-size: 1.05rem;
+        }
+      }
+    }
+  }
+  &__social {
+    margin: 0 0 !important;
+    &-link {
+      padding: 0 0 !important;
+      border: 0 !important;
+    }
+  }
+  &__table {
+    width: 100%;
+    &-tr {
+      font-family: $font;
+      color: $C-1;
+      font-size: 0.67rem;
+
+      // min-width: 500px;
+      @include ms-screen {
+        font-size: 1rem;
+      }
+
+      // min-width: 768px;
+      @include md-screen {
+        font-size: 0.8rem;
+      }
+
+      // min-width: 992px;
+      @include lg-screen {
+        font-size: 1rem;
+      }
+    }
+    &-head {
+      background: #f7f8fa;
+      text-transform: capitalize;
+      &--tr {
+        th {
+          padding: 0.8rem 0;
+          font-weight: 700;
+        }
+      }
+    }
+    &-tbody {
+      &--tr {
+        th {
+          font-weight: 500;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.125) !important;
+          // padding: 1rem 5px;
+          padding: 1.5rem 0 1rem 0;
+          text-transform: capitalize;
+        }
+      }
+      &--status {
+        color: $be;
+      }
+      &--status2 {
+        color: $btn;
+      }
+    }
+    &-btn {
+      box-shadow: none !important;
+      outline: 0 !important;
+      background: #ebebeb !important;
+      text-transform: capitalize;
+      font-family: $font;
+      font-weight: 500 !important;
+      border-radius: 2px;
+      font-size: 0.7rem !important;
+      padding: 5px 0.7rem !important;
+
+      // min-width: 500px;
+      @include ms-screen {
+        padding: 5px 1.5rem !important;
+        font-size: 0.9rem !important;
+      }
+    }
+    &-wishlist {
+      &--img {
+        width: 3rem;
+        height: auto;
+        margin: 0 12px 0 0;
+
+        // min-width: 500px;
+        @include ms-screen {
+          width: 5rem;
+        }
+      }
+      &--text {
+        font-family: $font;
+        font-weight: 500;
+        color: $C-1;
+        -webkit-line-clamp: 1;
+        @include ellipse;
+        font-size: 0.67rem;
+
+        // min-width: 500px;
+        @include ms-screen {
+          font-size: 1rem;
+        }
+      }
+      &--price {
+        font-family: $font;
+        font-weight: 500;
+        color: $C-1;
+        font-size: 0.67rem;
+
+        // min-width: 500px;
+        @include ms-screen {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  &__form {
+    padding: 2rem 0 3rem 0;
+    &-title {
+      color: $C-1 !important;
+      margin: 0 0 0.5rem 0 !important;
+    }
+  }
+}
