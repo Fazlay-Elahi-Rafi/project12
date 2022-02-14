@@ -110,6 +110,18 @@
         font-size: 1rem;
         font-family: $font;
         font-weight: 500;
+        -webkit-line-clamp: 2;
+        @include ellipse;
+
+        //   min-width: 992px;
+        @include lg-screen {
+          font-size: 0.9rem;
+        }
+
+        //   min-width: 1200px;
+        @include xl-screen {
+          font-size: 1rem;
+        }
       }
       &--check {
         color: $text;

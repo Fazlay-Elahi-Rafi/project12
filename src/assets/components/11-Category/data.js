@@ -1,6 +1,6 @@
 import { FaRegHeart, FaStar, FaRegStar } from "react-icons/fa";
 import { CgShoppingCart } from "react-icons/cg";
-
+import { TiShoppingCart } from "react-icons/ti";
 
 export default [
   {
@@ -9,7 +9,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/zvzp5VXW/f-3.png",
+    image: "https://i.postimg.cc/vB7sNMy1/f-1.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -17,6 +17,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -25,7 +31,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/Wz8WJ0fX/f-2.png",
+    image: "https://i.postimg.cc/C1p0753T/f-2.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -33,6 +39,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -41,7 +53,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/zvzp5VXW/f-3.png",
+    image: "https://i.postimg.cc/mk8GTwtB/f-3.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -49,6 +61,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -57,7 +75,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/cCFhJ0rz/f-4.png",
+    image: "https://i.postimg.cc/MHWSk4Z9/f-4.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -65,6 +83,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -73,7 +97,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/0jPXQVZz/f-5.png",
+    image: "https://i.postimg.cc/2SJrq2T5/f-5.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -81,6 +105,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -89,7 +119,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/XJ0QHsRs/f-6.png",
+    image: "https://i.postimg.cc/g0Zd38BH/f-6.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -97,6 +127,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -105,7 +141,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/0jPXQVZz/f-5.png",
+    image: "https://i.postimg.cc/2SJrq2T5/f-5.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -113,6 +149,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -121,7 +163,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/XJ0QHsRs/f-6.png",
+    image: "https://i.postimg.cc/g0Zd38BH/f-6.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -129,6 +171,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -137,7 +185,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/cCFhJ0rz/f-4.png",
+    image: "https://i.postimg.cc/MHWSk4Z9/f-4.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -145,6 +193,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -153,7 +207,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/Wz8WJ0fX/f-2.png",
+    image: "https://i.postimg.cc/C1p0753T/f-2.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -161,6 +215,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -169,7 +229,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/cCFhJ0rz/f-4.png",
+    image: "https://i.postimg.cc/MHWSk4Z9/f-4.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -177,6 +237,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
   {
@@ -185,7 +251,7 @@ export default [
     category: "Fry Food",
     price: "10.00",
     desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque minima iste nobis, sequi iure rem odio obcaecati exercitationem. Tempora eum blanditiis optio distinctio fuga! Laboriosam unde voluptas tempore maxime tenetur.",
-    image: "https://i.postimg.cc/0jPXQVZz/f-5.png",
+    image: "https://i.postimg.cc/2SJrq2T5/f-5.png",
     icon: <FaStar className="items__card-star--active" />,
     icon2: <FaRegStar />,
     heart: (
@@ -193,6 +259,12 @@ export default [
     ),
     cart: (
       <CgShoppingCart className="category__card-icon category__card-icon--one" />
+    ),
+    heartlg: (
+      <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+    ),
+    cartlg: (
+      <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
     ),
   },
 ];

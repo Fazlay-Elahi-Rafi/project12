@@ -1,18 +1,53 @@
 import React, { useState } from "react";
 
-import img01 from "../../img/f-1.png";
-
 import { FiRefreshCw } from "react-icons/fi";
-import { FaListUl, FaRegHeart, FaStar, FaRegStar } from "react-icons/fa";
+import {
+  FaListUl,
+  FaRegHeart,
+  FaStar,
+  FaRegStar,
+  FaBars,
+} from "react-icons/fa";
 import { BsGrid3X3GapFill } from "react-icons/bs";
 import { CgShoppingCart } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
-import ProductProps from "./productProps";
 
-import Data from "./api";
+import Slider from "@mui/material/Slider";
+import { red } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import Data from "./data";
 
 export default function Category() {
   const [data, setData] = useState(Data);
+  const [view, setView] = useState(true);
+  const [value, setValue] = useState([0, 50]);
+
+  const theme = createTheme({
+    palette: {
+      secondary: {
+        main: red[500],
+      },
+    },
+  });
+
+  function valuetext(value) {
+    return `${value}°C`;
+  }
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  const listFun = (e) => {
+    setView(false);
+  };
+  const gridFun = (e) => {
+    setView(true);
+  };
+  const resetFun = (e) => {
+    setView(true);
+  };
   return (
     <>
       <section className="category">
@@ -39,7 +74,7 @@ export default function Category() {
                     <h5 className="category__link-text">Filter</h5>
                   </div>
                   <div className="">
-                    <i className="bx bx-plus category__link-icon"></i>
+                    <FaBars className="bx bx-plus category__link-icon" />
                   </div>
                 </a>
 
@@ -152,9 +187,6 @@ export default function Category() {
                             placeholder="0"
                           />
                         </div>
-                        {/* <!-- <span className="m-auto"
-                      ><i className="bx bx-minus category__price-dif"></i
-                    ></span> --> */}
                         <div className="text-end mx-4 mx-sm-5 mx-md-3">
                           <input
                             className="category__price-inp"
@@ -164,7 +196,16 @@ export default function Category() {
                         </div>
                       </div>
                       <div className="mt-4 mx-lg-0">
-                        <input className="category__price-range" type="range" />
+                        <ThemeProvider theme={theme}>
+                          <Slider
+                            getAriaLabel={() => "Temperature range"}
+                            value={value}
+                            onChange={handleChange}
+                            valueLabelDisplay="auto"
+                            getAriaValueText={valuetext}
+                            color="secondary"
+                          />
+                        </ThemeProvider>
                       </div>
                     </div>
                   </div>
@@ -210,13 +251,23 @@ export default function Category() {
                   </div>
                   <div className="d-flex">
                     <div className="">
-                      <FiRefreshCw className="category__link-icon" />
+                      <FiRefreshCw
+                        onClick={resetFun}
+                        className="category__link-icon"
+                      />
                     </div>
                     <div className="mx-3">
-                      <FaListUl className="category__link-icon" />
+                      <FaListUl
+                        onClick={listFun}
+                        className="category__link-icon"
+                      />
                     </div>
+
                     <div className="">
-                      <BsGrid3X3GapFill className="category__link-icon" />
+                      <BsGrid3X3GapFill
+                        onClick={gridFun}
+                        className="category__link-icon"
+                      />
                     </div>
                   </div>
                 </div>
@@ -224,151 +275,148 @@ export default function Category() {
 
               {/* <!-- Category Products --> */}
               <div className="row">
-                {/* <div className="col-12 mb-4 mb-xl-4">
-                  <div className="card extra__card category__card mx-md-2 mx-xl-0">
-                    <div className="row">
-                      <div
-                        className="
-                        col-lg-5
-                        category__card-image
-                        d-flex
-                        align-items-center
-                      "
-                      >
-                        <div className="d-flex">
-                          <a href="#" className="">
-                            <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
-                          </a>
-                          <a href="#" className="">
-                            <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
-                          </a>
-                        </div>
-                        <a href="#" className="category__card-image--link">
-                          <img
-                            className="img-fluid extra__card-img"
-                            src={img01}
-                            alt="image name"
-                          />
-                        </a>
-                      </div>
-                      <div className="col-lg-7">
-                        <div className="card-body">
-                          <a href="#" className="items__card-titlebig">
-                            Vegetable Barger
-                          </a>
-                          <div
-                            className="
-                            col-10
-                            items__card-star
-                            d-sm-flex
-                            justify-content-between
-                          "
-                          >
-                            <div className="col-sm-6 col-lg-7 col-xl-6">
-                              <ul>
-                                <li>
-                                  <FaStar className="items__card-star--active" />
-                                </li>
-                                <li>
-                                  <FaStar className="items__card-star--active" />
-                                </li>
-                                <li>
-                                  <FaStar className="items__card-star--active" />
-                                </li>
-                                <li>
-                                  <FaRegStar />
-                                </li>
-                                <li>
-                                  <FaRegStar />
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="ccol-sm-7 col-lg-8 col-xl-7 mt-3 mt-sm-0">
-                              <li className="mx-sm-3 items__card-wishlist">
-                                <FaRegHeart />
-                                <span className="mx-2">add to wishlist</span>
-                              </li>
-                            </div>
-                          </div>
-                          <div className="mt-3">
-                            <span className="items__card-categori">
-                              Categories : Fry Food
-                            </span>
-                          </div>
-                          <div className="mt-2">
-                            <p className="product__card-text items__card-time--text">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Blanditiis similique cum ad neque, sint
-                              natus aliquam dolorum quod molestiae repellat
-                              labore nesciunt fugiat, dolores pariatur, possimus
-                              magnam esse harum explicabo!
-                            </p>
-                          </div>
-                          <div
-                            className="
-                            d-sm-flex
-                            justify-content-between
-                            align-items-center
-                            mt-3
-                          "
-                          >
-                            <span className="featured__items-price--num extra__price">
-                              $17.00
-                            </span>
-                            <div className="col-sm-6 col-xl-5">
-                              <button className="btn form-control items__card-btn">
-                                <CgShoppingCart className="items__card-btn--icon" />
-                                add to cart
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> */}
                 {data.map((item) => {
                   return (
                     <>
-                      <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4 mb-xl-4">
-                        <div className="card category__card extra__card">
-                          <div className="extra__card-image">
-                            <div className="d-flex">
-                              <a href="#" className="">
-                                {item.cart}
-                              </a>
-                              <a href="#" className="">
-                                {item.heart}
-                              </a>
-                            </div>
-                            <a href="#">
-                              <img
-                                className="img-fluid extra__card-img"
-                                src={item.image}
-                                alt="image name"
-                              />
-                            </a>
-                          </div>
-                          <div className="card-body">
-                            <a
-                              href="#"
-                              className="comnt__body-text extra__card-title"
-                            >
-                              {item.title}
-                            </a>
-                            <div className="items__card-star d-flex justify-content-between">
-                              <ul>
-                                <li>{item.icon}</li>
-                                <li>{item.icon}</li>
-                                <li>{item.icon}</li>
-                                <li>{item.icon2}</li>
-                                <li>{item.icon2}</li>
-                              </ul>
-                            </div>
-                            <div className="">
-                              <span className="featured__items-price--num extra__price">
-                                ${item.price}
-                              </span>
+                      <div
+                        className={`${
+                          view
+                            ? "col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4 mb-xl-4"
+                            : "row m-auto"
+                        }`}
+                        key={item.id}
+                      >
+                        <div
+                          className={`${
+                            view
+                              ? "card category__card extra__card"
+                              : "col-12 mb-4 mb-xl-4"
+                          }`}
+                        >
+                          <div
+                            className={`${
+                              view
+                                ? ""
+                                : "card extra__card category__card mx-md-2 mx-xl-0"
+                            }`}
+                          >
+                            <div className={`${view ? "" : "row"}`}>
+                              <div
+                                className={`${
+                                  view
+                                    ? "extra__card-image"
+                                    : "col-lg-5 category__card-image d-flex align-items-center"
+                                }`}
+                              >
+                                <div className="d-flex">
+                                  {view ? (
+                                    <>
+                                      <a href="#" className="">
+                                        {item.cart}
+                                      </a>
+                                      <a href="#" className="">
+                                        {item.heart}
+                                      </a>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <a href="#" className="">
+                                        <TiShoppingCart className="category__card-iconlg category__card-iconlg--one" />
+                                      </a>
+                                      <a href="#" className="">
+                                        <FaRegHeart className="category__card-iconlg category__card-iconlg--two" />
+                                      </a>
+                                    </>
+                                  )}
+                                </div>
+                                <a
+                                  href="#"
+                                  className={`${
+                                    view ? "" : "category__card-image--link"
+                                  }`}
+                                >
+                                  <img
+                                    className="img-fluid extra__card-img"
+                                    src={item.image}
+                                    alt="image name"
+                                  />
+                                </a>
+                              </div>
+                              <div className={`${view ? "" : "col-lg-7"}`}>
+                                <div className="card-body">
+                                  <a
+                                    href="#"
+                                    className={`${
+                                      view
+                                        ? "comnt__body-text extra__card-title"
+                                        : "items__card-titlebig"
+                                    }`}
+                                  >
+                                    {item.title}
+                                  </a>
+                                  {view ? (
+                                    <>
+                                      <div className="items__card-star d-flex justify-content-between">
+                                        <ul>
+                                          <li>{item.icon}</li>
+                                          <li>{item.icon}</li>
+                                          <li>{item.icon}</li>
+                                          <li>{item.icon2}</li>
+                                          <li>{item.icon2}</li>
+                                        </ul>
+                                      </div>
+                                      <div className="">
+                                        <span className="featured__items-price--num extra__price">
+                                          ${item.price}
+                                        </span>
+                                      </div>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <div className="col-10 items__card-star d-sm-flex justify-content-between">
+                                        <div className="col-sm-6 col-lg-7 col-xl-6">
+                                          <ul>
+                                            <li>{item.icon}</li>
+                                            <li>{item.icon}</li>
+                                            <li>{item.icon}</li>
+                                            <li>{item.icon2}</li>
+                                            <li>{item.icon2}</li>
+                                          </ul>
+                                        </div>
+                                        <div className="ccol-sm-7 col-lg-8 col-xl-7 mt-3 mt-sm-0">
+                                          <li className="mx-sm-3 items__card-wishlist">
+                                            <FaRegHeart />
+                                            <span className="mx-2">
+                                              add to wishlist
+                                            </span>
+                                          </li>
+                                        </div>
+                                      </div>
+                                      <div className="mt-3">
+                                        <span className="items__card-categori">
+                                          Categories : {item.category}
+                                        </span>
+                                      </div>
+                                      <div className="mt-2">
+                                        <p className="items__card-time--text">
+                                          {item.desc}
+                                        </p>
+                                      </div>
+                                      <div className="d-sm-flex justify-content-between align-items-center mt-3">
+                                        <span className="featured__items-price--num extra__price">
+                                          ${item.price}
+                                        </span>
+                                        <div className="col-sm-6 col-xl-5">
+                                          <button className="btn form-control items__card-btn">
+                                            <CgShoppingCart className="items__card-btn--icon" />
+                                            add to cart
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </>
+                                  )}
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -376,208 +424,6 @@ export default function Category() {
                     </>
                   );
                 })}
-                {/* <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4 mb-xl-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4 mb-xl-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4 mb-xl-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div> */}
-
-                {/* <!-- second row --> */}
-                {/* <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div> */}
-
-                {/* third row */}
-                {/* <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div>
-                <div className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 mb-4">
-                  <ProductProps
-                    img={img01}
-                    title="Vegetable Barger"
-                    price="$17.00"
-                    cart={
-                      <TiShoppingCart className="category__card-icon category__card-icon--one" />
-                    }
-                    heart={
-                      <FaRegHeart className="category__card-icon category__card-icon--two" />
-                    }
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon={<FaStar className="items__card-star--active" />}
-                    icon2={<FaRegStar />}
-                    icon2={<FaRegStar />}
-                  />
-                </div> */}
               </div>
 
               {/* <!-- Category Pagination --> */}
